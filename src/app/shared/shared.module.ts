@@ -14,6 +14,9 @@ import { HeaderUserComponent } from './components/header-user/header-user.compon
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    SideBarComponent
   ]
 })
 export class SharedModule { }
