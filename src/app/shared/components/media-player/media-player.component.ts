@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild, ElementRef } from '@angular/core';
-// import { TrackModel } from '@core/models/tracks.model';
+import { TrackModel } from '@core/models/tracks.model';
 // import { MultimediaService } from '@shared/services/multimedia.service';
 import { Subscription } from 'rxjs'; //TODO: Programacion reactiva!
 
