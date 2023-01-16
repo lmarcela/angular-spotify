@@ -1,4 +1,4 @@
-// import { TrackService } from '@modules/tracks/services/track.service';
+import { TrackService } from '@modules/tracks/services/track.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
 import { Subscription } from 'rxjs';
@@ -15,7 +15,7 @@ export class TrackPageComponent implements OnInit, OnDestroy {
   tracksRandom: Array<TrackModel> = []
   listObservers$: Array<Subscription> = []
 
-  // constructor(private trackService: TrackService) { }
+  constructor(private trackService: TrackService) { }
 
   ngOnInit(): void {
     const {data}:any = (dataRaw as any).default
@@ -23,20 +23,21 @@ export class TrackPageComponent implements OnInit, OnDestroy {
     this.tracksRandom=data;
     console.log(data)
     this.loadDataAll() //TODO 📌📌
-    // this.loadDataRandom() //TODO 📌📌
+    this.loadDataRandom() //TODO 📌📌
   }
 
   async loadDataAll(): Promise<any> {
-    // this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
+    this.tracksTrending = await this.trackService.getAllTracks$().toPromise()
 
   }
 
-  // loadDataRandom(): void {
-  //   this.trackService.getAllRandom$()
-  //     .subscribe((response: TrackModel[]) => {
-  //       this.tracksRandom = response
-  //     })
-  // }
+  loadDataRandom(): void {
+    const observer1$ = this.trackService.getAllRandom$()
+      .subscribe((response: TrackModel[]) => {
+        this.tracksRandom = response
+      })
+    this.listObservers$=[observer1$]
+  }
 
   ngOnDestroy(): void {
 
