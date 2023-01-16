@@ -26,7 +26,8 @@
 <ng-template #coverSection let-track="track">
 
     <div class="cover-section">
-        <img appImgBroken class="cover-track" [src]="track.cover" [alt]="track.name">
+        <img appImgBroken
+        [customImg]="'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png'" class="cover-track" [src]="track.cover" [alt]="track.name">
         <div class="cover-info">
             <div class="name-track">{{track.name}}</div>
             <div class="name-track-details">{{track.artist.name}}</div>
