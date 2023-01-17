@@ -18,7 +18,7 @@
 <!-- ZONE TEMPLATES -->
 
 <ng-template #artistZone>
-    <!-- <div class="artist-inside" *ngIf="multimediaService.trackInfo$ | async as mockCover">
+    <div class="artist-inside" *ngIf="multimediaService.trackInfo$ | async as mockCover">
 
         <img [src]="mockCover.cover" alt="" class="cover">
         <div class="track-info">
@@ -30,11 +30,11 @@
                 <i class="uil uil-heart"></i>
             </button>
         </div>
-    </div> -->
+    </div>
 </ng-template>
 
 <ng-template #playerZone>
-    <!-- <div class="player-controls-inside">
+    <div class="player-controls-inside">
         <div class="buttons-media">
             <button class="arrow btn">
                 <i class="uil uil-previous"></i>
@@ -59,7 +59,7 @@
             </span>
             <div class="time">{{multimediaService.timeRemaining$ | async}}</div>
         </div>
-    </div> -->
+    </div>
 </ng-template>
 
 <ng-template #playerAudio>
