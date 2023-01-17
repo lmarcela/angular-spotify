@@ -13,7 +13,6 @@ export class TrackPageComponent implements OnInit, OnDestroy {
 
   tracksTrending: Array<TrackModel> = []
   tracksRandom: Array<TrackModel> = []
-  listObservers$: Array<Subscription> = []
 
   constructor(private trackService: TrackService) { }
 
@@ -36,7 +35,6 @@ export class TrackPageComponent implements OnInit, OnDestroy {
       .subscribe((response: TrackModel[]) => {
         this.tracksRandom = response
       })
-    this.listObservers$=[observer1$]
   }
 
   ngOnDestroy(): void {
