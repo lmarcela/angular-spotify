@@ -1,23 +1,44 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavoritePageComponent } from './favorite-page.component';
+import { PlayListHeaderComponent } from '../../../../shared/components/play-list-header/play-list-header.component';
+import { PlayListBodyComponent } from '../../../../shared/components/play-list-body/play-list-body.component';
+import { Component } from '@angular/core';
 
-// describe('FavoritePageComponent', () => {
-//   let component: FavoritePageComponent;
-//   let fixture: ComponentFixture<FavoritePageComponent>;
+describe('FavoritePageComponent', () => {
+  let component: FavoritePageComponent;
+  let fixture: ComponentFixture<FavoritePageComponent>;
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ FavoritePageComponent ]
-//     })
-//     .compileComponents();
+  @Component({
+    selector: 'app-play-list-header',
+    template: '<p>Mock PlayListHeaderComponent</p>'
+  })
+  class MockPlayListHeaderComponent {}
 
-//     fixture = TestBed.createComponent(FavoritePageComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  @Component({
+    selector: 'app-play-list-body',
+    template: '<p>Mock PlayListBodyComponent</p>'
+  })
+  class MockPlayListBodyComponent {}
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ 
+        FavoritePageComponent,
+        MockPlayListHeaderComponent,
+        MockPlayListBodyComponent
+     ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(FavoritePageComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
