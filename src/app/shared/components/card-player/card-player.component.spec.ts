@@ -11,7 +11,9 @@ import { CardPlayerComponent } from './card-player.component';
 //       declarations: [ CardPlayerComponent ]
 //     })
 //     .compileComponents();
+//   });
 
+//   beforeEach(() => {
 //     fixture = TestBed.createComponent(CardPlayerComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
