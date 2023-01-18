@@ -2,7 +2,7 @@ import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
+// import { CookieService } from 'ngx-cookie-service';
 
 
 @Injectable({
@@ -10,7 +10,9 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthService {
   private readonly URL = environment.api
-  constructor(private http: HttpClient, private cookie:CookieService) { }
+  constructor(private http: HttpClient, 
+    //private cookie:CookieService
+    ) { }
 
   sendCredentials(email: string, password: string): Observable<any> 
   {
@@ -22,7 +24,7 @@ export class AuthService {
     .pipe(
       tap((responseOk:any)=>{
         const {tokenSession,data} = responseOk
-        this.cookie.set('token_service',tokenSession,4,'/')
+        //this.cookie.set('token_service',tokenSession,4,'/')
       })
     )
   }
